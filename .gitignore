@@ -1,0 +1,12 @@
+# Toolchains and build output (download/build locally; see devchain/README.md)
+devchain/vendor/
+devchain/build/
+devchain/out/
+
+# Screen captures and disk images
+captures/
+*.adf
+*.hfe
+
+__pycache__/
+*.pyc

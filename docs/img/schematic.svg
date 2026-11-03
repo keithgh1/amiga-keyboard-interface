@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 700" width="1120" height="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<style>
+  .h { font-size: 15px; font-weight: 700; fill: #111827; }
+  .p { font-size: 12.5px; fill: #111827; }
+  .r { font-size: 12px; fill: #111827; }
+  .s { font-size: 12px; fill: #6b7280; }
+  .n { font-size: 12px; font-weight: 700; fill: #111827; }
+</style>
+<rect width="1120" height="700" fill="#ffffff"/>
+<rect x="40" y="56" width="180" height="530" rx="6" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.6"/>
+<text class="h" x="56" y="84">Pro Micro</text>
+<text class="s" x="56" y="102">ATmega32U4</text>
+<text class="s" x="56" y="118">5 V / 16 MHz</text>
+<text class="s" x="56" y="300">USB from PC</text>
+<text class="s" x="56" y="316">(also its power)</text>
+<text class="p" x="212" y="104" text-anchor="end">D8 · PB4</text>
+<text class="p" x="212" y="168" text-anchor="end">D9 · PB5 · PCINT5</text>
+<text class="p" x="212" y="232" text-anchor="end">D10 · PB6</text>
+<text class="p" x="212" y="424" text-anchor="end">GND</text>
+<text class="p" x="212" y="488" text-anchor="end">A0 · PF7 · ADC</text>
+<text class="p" x="212" y="552" text-anchor="end">A1 · PF6 · ADC</text>
+<rect x="700" y="74" width="44" height="500" fill="#f9fafb" stroke="#111827" stroke-width="1.6"/>
+<text class="h" x="722.0" y="64" text-anchor="middle">CN13</text>
+<text class="n" x="722.0" y="104" text-anchor="middle">1</text>
+<text class="n" x="722.0" y="168" text-anchor="middle">2</text>
+<text class="n" x="722.0" y="232" text-anchor="middle">3</text>
+<text class="n" x="722.0" y="296" text-anchor="middle">4</text>
+<text class="n" x="722.0" y="360" text-anchor="middle">5</text>
+<text class="n" x="722.0" y="424" text-anchor="middle">6</text>
+<text class="n" x="722.0" y="488" text-anchor="middle">7</text>
+<text class="n" x="722.0" y="552" text-anchor="middle">8</text>
+<line x1="220" y1="100" x2="300" y2="100" stroke="#111827" stroke-width="1.6"/>
+<polyline points="300,100 316.0,100 320.0,93 328.0,107 336.0,93 344.0,107 352.0,93 360.0,107 364.0,100 380,100" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="340.0" y="87" text-anchor="middle">R1 100 Ω</text>
+<line x1="380" y1="100" x2="700" y2="100" stroke="#111827" stroke-width="1.6"/>
+<line x1="220" y1="164" x2="300" y2="164" stroke="#111827" stroke-width="1.6"/>
+<polyline points="300,164 316.0,164 320.0,157 328.0,171 336.0,157 344.0,171 352.0,157 360.0,171 364.0,164 380,164" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="340.0" y="151" text-anchor="middle">R2 100 Ω</text>
+<line x1="380" y1="164" x2="700" y2="164" stroke="#111827" stroke-width="1.6"/>
+<line x1="220" y1="228" x2="300" y2="228" stroke="#111827" stroke-width="1.6"/>
+<polyline points="300,228 316.0,228 320.0,221 328.0,235 336.0,221 344.0,235 352.0,221 360.0,235 364.0,228 380,228" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="340.0" y="215" text-anchor="middle">R3 100 Ω</text>
+<line x1="380" y1="228" x2="700" y2="228" stroke="#111827" stroke-width="1.6"/>
+<text class="s" x="560" y="92" text-anchor="middle">KCLK</text>
+<text class="s" x="560" y="156" text-anchor="middle">KDAT</text>
+<text class="s" x="560" y="220" text-anchor="middle">/KBRESET</text>
+<line x1="666" y1="292" x2="700" y2="292" stroke="#111827" stroke-width="1.6"/>
+<path d="M658,286 l12,12 M658,298 l12,-12" stroke="#dc2626" stroke-width="2"/>
+<text class="s" x="648" y="296" text-anchor="end">+5 V: not connected</text>
+<line x1="666" y1="356" x2="700" y2="356" stroke="#111827" stroke-width="1.6"/>
+<path d="M658,350 l12,12 M658,362 l12,-12" stroke="#dc2626" stroke-width="2"/>
+<text class="s" x="648" y="360" text-anchor="end">key: no pin</text>
+<line x1="220" y1="420" x2="700" y2="420" stroke="#111827" stroke-width="1.6"/>
+<text class="s" x="560" y="412" text-anchor="middle">GND</text>
+<line x1="220" y1="484" x2="440" y2="484" stroke="#111827" stroke-width="1.6"/>
+<circle cx="440" cy="484" r="3.6" fill="#111827"/>
+<line x1="440" y1="484" x2="520" y2="484" stroke="#111827" stroke-width="1.6"/>
+<polyline points="520,484 536.0,484 540.0,477 548.0,491 556.0,477 564.0,491 572.0,477 580.0,491 584.0,484 600,484" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="560.0" y="471" text-anchor="middle">R4 10k</text>
+<line x1="600" y1="484" x2="700" y2="484" stroke="#111827" stroke-width="1.6"/>
+<line x1="220" y1="548" x2="440" y2="548" stroke="#111827" stroke-width="1.6"/>
+<circle cx="440" cy="548" r="3.6" fill="#111827"/>
+<line x1="440" y1="548" x2="520" y2="548" stroke="#111827" stroke-width="1.6"/>
+<polyline points="520,548 536.0,548 540.0,541 548.0,555 556.0,541 564.0,555 572.0,541 580.0,555 584.0,548 600,548" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="560.0" y="535" text-anchor="middle">R5 10k</text>
+<line x1="600" y1="548" x2="700" y2="548" stroke="#111827" stroke-width="1.6"/>
+<text class="s" x="650" y="476" text-anchor="middle">power LED</text>
+<text class="s" x="650" y="540" text-anchor="middle">drive LED</text>
+<circle cx="440" cy="420" r="3.6" fill="#111827"/>
+<polyline points="440,420 440,432.8 433,436.0 447,442.4 433,448.8 447,455.2 433,461.6 447,468.0 440,471.2 440,484" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="426" y="456.0" text-anchor="end">R6 10k</text>
+<polyline points="440,548 440,557.2 433,559.5 447,564.1 433,568.7 447,573.3 433,577.9 447,582.5 440,584.8 440,594" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="426" y="575.0" text-anchor="end">R7 10k</text>
+<line x1="440" y1="594" x2="440" y2="602" stroke="#111827" stroke-width="1.6"/>
+<line x1="431.0" y1="602" x2="449.0" y2="602" stroke="#111827" stroke-width="1.6"/>
+<line x1="434.5" y1="606" x2="445.5" y2="606" stroke="#111827" stroke-width="1.6"/>
+<line x1="438.0" y1="610" x2="442.0" y2="610" stroke="#111827" stroke-width="1.6"/>
+<rect x="790" y="40" width="310" height="570" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text class="h" x="804" y="592">A500 motherboard (Rev 6A)</text>
+<line x1="744" y1="100" x2="880" y2="100" stroke="#111827" stroke-width="1.6"/>
+<circle cx="836" cy="100" r="3.6" fill="#111827"/>
+<polyline points="836,62 836,69.6 829,71.5 843,75.3 829,79.1 843,82.9 829,86.7 843,90.5 836,92.4 836,100" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="822" y="85.0" text-anchor="end">10k </text>
+<line x1="827" y1="62" x2="845" y2="62" stroke="#111827" stroke-width="1.8"/>
+<text class="r" x="850" y="66">+5 V</text>
+<text class="p" x="888" y="104">CIA-A pin 40 (CNT)</text>
+<line x1="744" y1="164" x2="880" y2="164" stroke="#111827" stroke-width="1.6"/>
+<circle cx="836" cy="164" r="3.6" fill="#111827"/>
+<polyline points="836,126 836,133.6 829,135.5 843,139.3 829,143.1 843,146.9 829,150.7 843,154.5 836,156.4 836,164" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="822" y="149.0" text-anchor="end">10k </text>
+<line x1="827" y1="126" x2="845" y2="126" stroke="#111827" stroke-width="1.8"/>
+<text class="r" x="850" y="130">+5 V</text>
+<text class="p" x="888" y="168">CIA-A pin 39 (SP)</text>
+<line x1="744" y1="228" x2="880" y2="228" stroke="#111827" stroke-width="1.6"/>
+<circle cx="836" cy="228" r="3.6" fill="#111827"/>
+<polyline points="836,190 836,197.6 829,199.5 843,203.3 829,207.1 843,210.9 829,214.7 843,218.5 836,220.4 836,228" fill="none" stroke="#111827" stroke-width="1.6"/>
+<text class="r" x="822" y="213.0" text-anchor="end">10k </text>
+<line x1="827" y1="190" x2="845" y2="190" stroke="#111827" stroke-width="1.8"/>
+<text class="r" x="850" y="194">+5 V</text>
+<text class="p" x="888" y="232">Gary /KBRESET (+ 555 reset)</text>
+<line x1="744" y1="292" x2="880" y2="292" stroke="#111827" stroke-width="1.6"/>
+<text class="p" x="888" y="296">+5 V</text>
+<text class="s" x="888" y="360">polarising key</text>
+<line x1="744" y1="420" x2="860" y2="420" stroke="#111827" stroke-width="1.6"/>
+<line x1="860" y1="422" x2="860" y2="430" stroke="#111827" stroke-width="1.6"/>
+<line x1="851.0" y1="430" x2="869.0" y2="430" stroke="#111827" stroke-width="1.6"/>
+<line x1="854.5" y1="434" x2="865.5" y2="434" stroke="#111827" stroke-width="1.6"/>
+<line x1="858.0" y1="438" x2="862.0" y2="438" stroke="#111827" stroke-width="1.6"/>
+<text class="p" x="888" y="424">GND</text>
+<line x1="744" y1="484" x2="880" y2="484" stroke="#111827" stroke-width="1.6"/>
+<text class="p" x="888" y="488">2N3906 + 100 Ω from +5 V</text>
+<text class="s" x="888" y="504">on while the power LED is lit</text>
+<line x1="744" y1="548" x2="880" y2="548" stroke="#111827" stroke-width="1.6"/>
+<text class="p" x="888" y="552">2N3906 + 100 Ω from +5 V</text>
+<text class="s" x="888" y="568">on while the DF0 motor runs</text>
+<text class="s" x="40" y="640">D8–D10 are open-drain: PORT bits stay 0 and the firmware only switches DDR (output = pull low, input = release).</text>
+<text class="s" x="40" y="658">Internal pull-ups are never enabled; the motherboard's 10k pull-ups (RP501) set the high level.</text>
+<text class="s" x="40" y="676">R4/R6 and R5/R7 divide the ~5 V LED drive to ~2.5 V for the ADC. Real keyboard unplugged from CN13.</text>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 684" width="1040" height="684" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <style>
+      .grp { stroke-width: 1.5; rx: 10; }
+      .box { fill: #ffffff; stroke-width: 1.2; rx: 6; }
+      .h { font-size: 15px; font-weight: 700; fill: #111827; }
+      .t { font-size: 13px; font-weight: 600; fill: #111827; }
+      .s { font-size: 11.5px; fill: #4b5563; }
+      .lbl { font-size: 11.5px; fill: #374151; }
+      .ln { stroke: #374151; stroke-width: 1.6; fill: none; }
+    </style>
+  </defs>
+  <rect width="1040" height="684" fill="#ffffff"/>
+
+  <!-- PC -->
+  <rect class="grp" x="20" y="30" width="280" height="374" fill="#eff6ff" stroke="#3b82f6"/>
+  <text class="h" x="160" y="56" text-anchor="middle">Windows 11 PC</text>
+  <rect class="box" x="38" y="72" width="244" height="50" stroke="#3b82f6" fill="#dbeafe"/>
+  <text class="t" x="160" y="93" text-anchor="middle">Claude Code</text>
+  <text class="s" x="160" y="111" text-anchor="middle">reads the screen, decides, acts</text>
+  <rect class="box" x="38" y="136" width="244" height="52" stroke="#3b82f6"/>
+  <text class="t" x="160" y="157" text-anchor="middle">amikbd.py · pointer.py</text>
+  <text class="s" x="160" y="175" text-anchor="middle">keyboard, closed-loop mouse</text>
+  <rect class="box" x="38" y="202" width="244" height="52" stroke="#3b82f6"/>
+  <text class="t" x="160" y="223" text-anchor="middle">amipush.py · amirun.py</text>
+  <text class="s" x="160" y="241" text-anchor="middle">file transfer, build-send-run</text>
+  <rect class="box" x="38" y="268" width="244" height="52" stroke="#3b82f6"/>
+  <text class="t" x="160" y="289" text-anchor="middle">vbcc 0.9h · vasm · NDK 3.2</text>
+  <text class="s" x="160" y="307" text-anchor="middle">cross-compile for Kickstart 1.3</text>
+  <rect class="box" x="38" y="334" width="244" height="52" stroke="#3b82f6"/>
+  <text class="t" x="160" y="355" text-anchor="middle">WinUAE · Unicorn 68000 tests</text>
+  <text class="s" x="160" y="373" text-anchor="middle">preflight on Kickstart 1.3</text>
+
+  <!-- Pro Micro -->
+  <rect class="grp" x="390" y="70" width="180" height="150" fill="#ecfdf5" stroke="#10b981"/>
+  <text class="h" x="480" y="96" text-anchor="middle">Pro Micro</text>
+  <text class="s" x="480" y="116" text-anchor="middle">ATmega32U4, 5 V / 16 MHz</text>
+  <text class="t" x="480" y="142" text-anchor="middle">amikbd firmware</text>
+  <text class="s" x="480" y="162" text-anchor="middle">A500 keyboard emulator</text>
+  <text class="s" x="480" y="180" text-anchor="middle">open-drain D8 / D9 / D10</text>
+  <text class="s" x="480" y="198" text-anchor="middle">LED sense on A0 / A1</text>
+
+  <!-- PC -> Pro Micro -->
+  <line class="ln" x1="300" y1="150" x2="388" y2="150" marker-end="url(#ah)" marker-start="url(#ah)"/>
+  <text class="lbl" x="345" y="141" text-anchor="middle">USB serial</text>
+  <text class="s" x="345" y="168" text-anchor="middle">T / K / CLICK</text>
+  <text class="s" x="345" y="183" text-anchor="middle">RAWHEX</text>
+
+  <!-- Amiga -->
+  <rect class="grp" x="720" y="30" width="300" height="374" fill="#fffbeb" stroke="#f59e0b"/>
+  <text class="h" x="870" y="56" text-anchor="middle">Amiga 500 (PAL, 1 MB)</text>
+  <rect class="box" x="740" y="72" width="260" height="52" stroke="#f59e0b"/>
+  <text class="t" x="870" y="93" text-anchor="middle">CN13 keyboard header</text>
+  <text class="s" x="870" y="111" text-anchor="middle">real keyboard unplugged</text>
+  <rect class="box" x="740" y="144" width="260" height="52" stroke="#f59e0b"/>
+  <text class="t" x="870" y="165" text-anchor="middle">CIA-A 8520 serial port</text>
+  <text class="s" x="870" y="183" text-anchor="middle">CNT = KCLK, SP = KDAT</text>
+  <rect class="box" x="740" y="216" width="260" height="52" stroke="#f59e0b"/>
+  <text class="t" x="870" y="237" text-anchor="middle">keyboard.device  |  LinkAgent</text>
+  <text class="s" x="870" y="255" text-anchor="middle">keys pass through, frames become files</text>
+  <rect class="box" x="740" y="288" width="260" height="52" stroke="#f59e0b"/>
+  <text class="t" x="870" y="309" text-anchor="middle">Gotek (FlashFloppy) as DF0:</text>
+  <text class="s" x="870" y="327" text-anchor="middle">ADF images on a USB stick</text>
+  <rect class="box" x="740" y="354" width="260" height="38" stroke="#f59e0b"/>
+  <text class="t" x="870" y="378" text-anchor="middle">RGB video + audio out</text>
+  <line class="ln" x1="870" y1="124" x2="870" y2="142" marker-end="url(#ah)"/>
+  <line class="ln" x1="870" y1="196" x2="870" y2="214" marker-end="url(#ah)"/>
+  <line class="ln" x1="870" y1="268" x2="870" y2="286" marker-end="url(#ah)"/>
+
+  <!-- Pro Micro <-> CN13 -->
+  <line class="ln" x1="570" y1="92" x2="738" y2="92" marker-end="url(#ah)"/>
+  <text class="lbl" x="654" y="84" text-anchor="middle">KCLK · KDAT · /KBRESET</text>
+  <line class="ln" x1="738" y1="112" x2="572" y2="112" marker-end="url(#ah)"/>
+  <text class="lbl" x="654" y="130" text-anchor="middle">power + drive LED</text>
+  <text class="s" x="645" y="148" text-anchor="middle">6 wires, shared GND</text>
+
+  <!-- Video return path -->
+  <rect class="grp" x="760" y="480" width="220" height="64" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text class="t" x="870" y="506" text-anchor="middle">SCART → HDMI converter</text>
+  <text class="s" x="870" y="525" text-anchor="middle">video + audio to HDMI</text>
+  <rect class="grp" x="390" y="480" width="250" height="64" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text class="t" x="515" y="506" text-anchor="middle">XR1 Lite HDMI capture</text>
+  <text class="s" x="515" y="525" text-anchor="middle">video + audio, 1280×720</text>
+
+  <line class="ln" x1="870" y1="404" x2="870" y2="478" marker-end="url(#ah)"/>
+  <text class="lbl" x="880" y="445">Amiga → SCART cable</text>
+  <line class="ln" x1="760" y1="512" x2="642" y2="512" marker-end="url(#ah)"/>
+  <text class="lbl" x="701" y="503" text-anchor="middle">HDMI</text>
+  <polyline class="ln" points="390,512 160,512 160,406" marker-end="url(#ah)"/>
+  <text class="lbl" x="275" y="503" text-anchor="middle">JPEG snapshot on request</text>
+
+  <line class="ln" x1="515" y1="544" x2="515" y2="586" marker-end="url(#ah)"/>
+  <text class="lbl" x="525" y="569">HDMI pass-through</text>
+  <rect class="grp" x="440" y="588" width="150" height="40" fill="#f9fafb" stroke="#6b7280"/>
+  <text class="t" x="515" y="613" text-anchor="middle">Monitor</text>
+
+  <text class="s" x="515" y="664" text-anchor="middle">The screen is both what Claude sees and LinkAgent's ACK channel (an inverse-video barcode).</text>
+</svg>
