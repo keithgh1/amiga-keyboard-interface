@@ -151,7 +151,7 @@ before pressing F7.
 
 ### Keymap
 amikbd types US layout. If punctuation comes out wrong (for example `:` typed as `@`), the disk is
-running a different keymap: type `T setmap usa1\n` first. The LinkAgent boot disk built by
+running a different keymap: type `T setmap usa1\n` first. The patched Workbench built by
 `devchain/build.py` switches to `usa1` automatically.
 
 ---

@@ -1,0 +1,10 @@
+; Keyboard transfer agent: install a pending update, run it from RAM:
+If EXISTS C:LinkAgent.new
+  Copy C:LinkAgent.new C:LinkAgent
+  Delete C:LinkAgent.new
+EndIf
+Copy C:LinkAgent RAM:LinkAgent
+Run >NIL: RAM:LinkAgent
+; Shell below the agent strip, opened last so it takes keyboard focus
+Wait 2
+NewShell CON:0/72/640/184/A500-Shell

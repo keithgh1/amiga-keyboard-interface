@@ -6,7 +6,7 @@ Quick reference:
 - Keys: `python tools/amikbd.py 'T dir\n' 'WAITDISK'` (single quotes so `\n` reaches the board).
 - Mouse: `python tools/pointer.py --goto X Y` then `python tools/amikbd.py "CLICK L 2"`.
 - Status: `python tools/amikbd.py S` (needs `sync=1`; `kclk=0 kdat=0` means the Amiga is off).
-- Compile + run C on the A500: `python tools/amirun.py prog.c` (vbcc `+a500`; needs the LinkAgent boot disk).
+- Compile + run C on the A500: `python tools/amirun.py prog.c` (vbcc `+a500`; needs LinkAgent running: `disk/LinkAgent.adf`).
   Files only: `python tools/amipush.py put local RAM:name`. See [devchain/README.md](devchain/README.md).
 
 Command reference: [firmware/amikbd/PROTOCOL.md](firmware/amikbd/PROTOCOL.md).

@@ -1,0 +1,3 @@
+# AmigaDOS scripts must keep LF line ends
+devchain/disk/** text eol=lf
+*.adf binary

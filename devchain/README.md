@@ -7,10 +7,25 @@ video capture (`AMIGA_SNAPSHOT_URL`). Keep that window visible during transfers.
 
 ## First use
 
-1. Copy `build/LinkAgent-WB13.adf` onto the Gotek USB stick as another disk image.
-   Build it from your own Workbench 1.3 ADF (see Build and validation); the receiver is added to C:.
-   The original image was left unchanged. Select the new image and boot the A500.
-   The startup script copies the receiver to RAM: and launches its own window.
+1. Get LinkAgent onto the Amiga, in one of two ways:
+   * **LinkAgent disk**: `disk/LinkAgent.adf` at the repository root (`build.py` rebuilds it as
+     `devchain/build/LinkAgent.adf`). A non-bootable disk holding only LinkAgent and two scripts,
+     with no Workbench files. Write it to a floppy with any ADF writer, or put it on a Gotek. Boot
+     your own Workbench 1.3, open a Shell, insert the disk (DF1: works too), then either:
+
+     ```
+     Execute LinkAgent:Start      ; run it now, nothing installed
+     Execute LinkAgent:Install    ; copy C:LinkAgent and S:LinkAgent-startup to the boot disk
+     ```
+
+     After Install, add `Execute S:LinkAgent-startup` to `S:Startup-Sequence` just before
+     `EndCLI` to start it at every boot.
+   * **Patched Workbench**: `build/LinkAgent-WB13.adf`, from `build.py --workbench`. A bootable
+     copy of your own Workbench 1.3 ADF with the receiver in C: and started from the
+     startup-sequence; the original image is left unchanged. Select it on the Gotek and boot.
+
+   Either way the receiver is copied to RAM:, opens its window strip at the top of the
+   screen, and an A500-Shell opens below it.
 2. Upload the updated keyboard firmware from a PowerShell in the project folder:
 
    ```powershell
@@ -30,8 +45,7 @@ video capture (`AMIGA_SNAPSHOT_URL`). Keep that window visible during transfers.
    total size and CRC32, closed the partial file, renamed it to the destination,
    and displayed a matching acknowledgement. A firmware `OK` alone is insufficient.
 
-For another boot disk, copy `build/LinkAgent` into its C: drawer, then run
-`C:LinkAgent` from an Amiga Shell. Only run one instance. The agent needs roughly
+To start it by hand instead, run `C:LinkAgent` from an Amiga Shell. Only run one instance. The agent needs roughly
 24 KB plus its AmigaDOS process, stack, console and filesystem buffers. It does
 not require AmigaBASIC, a serial cable, or an Amiga C runtime.
 

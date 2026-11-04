@@ -1,0 +1,7 @@
+; Copies LinkAgent to the boot disk: C:LinkAgent and S:LinkAgent-startup.
+Copy LinkAgent:LinkAgent C:LinkAgent
+Copy LinkAgent:S/LinkAgent-startup S:LinkAgent-startup
+Echo "Installed C:LinkAgent and S:LinkAgent-startup."
+Echo "To start LinkAgent at every boot, add this line to"
+Echo "S:Startup-Sequence just before EndCLI:"
+Echo "  Execute S:LinkAgent-startup"

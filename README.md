@@ -19,6 +19,7 @@ Write-up: *Using Claude to Remote Control My Amiga 500* on techtravels.org (link
 | [`firmware/amikbd/`](firmware/amikbd/) | Arduino Pro Micro firmware that emulates the A500 keyboard, plus [PROTOCOL.md](firmware/amikbd/PROTOCOL.md) |
 | [`tools/`](tools/) | PC side: `amikbd.py` (keys and mouse), `pointer.py` (closed-loop pointer), `amipush.py` (file transfer), `amirun.py` (build, send, run), `ledwatch.py` |
 | [`devchain/`](devchain/) | LinkAgent, the 68000 receiver that turns keyboard frames into files, its tests, the vbcc config and examples. See [devchain/README.md](devchain/README.md) |
+| [`disk/LinkAgent.adf`](disk/LinkAgent.adf) | Ready-made Amiga disk with LinkAgent and its Start/Install scripts |
 | [`hardware/WIRING.md`](hardware/WIRING.md) | Board wiring, pinout and parts |
 | [`USAGE.md`](USAGE.md) | Operator guide: reading the screen, sending input, waiting for the disk, troubleshooting |
 | [`CLAUDE.md`](CLAUDE.md) | Quick reference that Claude Code reads when working in this repository |
@@ -81,14 +82,25 @@ Ordinary keys still pass through to the system. The PC reads the acknowledgement
 inverse-video spaces in the agent's window, through the video capture. Files are written to `.part` and
 renamed only once their size and CRC32 match. Measured throughput is about 2 KB/s.
 
+**Getting it onto the Amiga:** [`disk/LinkAgent.adf`](disk/LinkAgent.adf) is a small disk holding only
+LinkAgent and two scripts, so no assembler is needed. Write it to a floppy with any ADF writer, or copy
+it onto a Gotek. Boot your own Workbench 1.3, open a Shell, insert the disk (DF1: works too) and type:
+
+```
+Execute LinkAgent:Start      ; run it now
+Execute LinkAgent:Install    ; or copy it to your boot disk
+```
+
+Then, on the PC:
+
 ```bash
-python devchain/build.py --workbench path/to/your/Workbench1.3.adf   # LinkAgent + a bootable Gotek image
 python tools/amipush.py ping
 python tools/amipush.py put local.bin RAM:local.bin
 ```
 
-You supply your own Workbench 1.3 disk image; none is included. Setup, the wire protocol and the tests
-are in [devchain/README.md](devchain/README.md).
+With a Gotek, `python devchain/build.py --workbench path/to/your/Workbench1.3.adf` also makes a
+bootable copy of your own Workbench with LinkAgent started at boot. No Workbench image is included.
+Setup, the wire protocol and the tests are in [devchain/README.md](devchain/README.md).
 
 ## Compile, send and run
 

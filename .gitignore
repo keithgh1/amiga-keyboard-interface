@@ -6,6 +6,7 @@ devchain/out/
 # Screen captures and disk images
 captures/
 *.adf
+!disk/LinkAgent.adf
 *.hfe
 
 __pycache__/

@@ -1,0 +1,6 @@
+; Starts LinkAgent from this disk. Nothing is installed.
+Copy LinkAgent:LinkAgent RAM:LinkAgent
+Run >NIL: RAM:LinkAgent
+; Shell below the agent strip, opened last so it takes keyboard focus
+Wait 2
+NewShell CON:0/72/640/184/A500-Shell

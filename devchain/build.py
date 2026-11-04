@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Keith Monahan
-"""Rebuild LinkAgent and optionally a bootable Gotek ADF from an owned WB 1.3 image."""
+"""Rebuild LinkAgent and its distribution disk, and optionally a bootable ADF from an owned WB 1.3 image."""
 import argparse
 import hashlib
 from pathlib import Path
@@ -18,6 +18,57 @@ def run(*args):
 
 def xdf(image, *args):
     run(sys.executable, "-m", "amitools.tools.xdftool", image, *args)
+
+
+DISK = ROOT / "devchain/disk"           # scripts copied onto LinkAgent.adf
+DISK_FILES = ["ReadMe", "Start", "Install", "S/LinkAgent-startup"]
+
+
+def amiga_text(name):
+    """Disk script with LF line ends (a CRLF checkout would break AmigaDOS scripts)."""
+    return (DISK / name).read_bytes().replace(b"\r\n", b"\n")
+
+
+def make_disk(agent):
+    """LinkAgent.adf: a non-bootable OFS disk holding only LinkAgent and its scripts.
+
+    Rebuilt only when its contents change, so the committed image stays stable.
+    """
+    target = OUT / "LinkAgent.adf"
+    stage = OUT / "disk"
+    shutil.rmtree(stage, ignore_errors=True)
+    (stage / "S").mkdir(parents=True)
+    want = {"LinkAgent": agent.read_bytes()}
+    want.update({n: amiga_text(n) for n in DISK_FILES})
+    for name, data in want.items():
+        (stage / name).write_bytes(data)
+    if target.exists() and disk_contents(target, want) == want:
+        print("Distribution disk unchanged:", target)
+        return
+    tmp = OUT / "LinkAgent-tmp.adf"
+    tmp.unlink(missing_ok=True)
+    cmds = ["create", "+", "format", "LinkAgent", "ofs", "+", "makedir", "S"]
+    for name in want:
+        cmds += ["+", "write", stage / name, name]
+    xdf(tmp, *cmds)
+    assert disk_contents(tmp, want) == want
+    tmp.replace(target)
+    print("Distribution disk:", target)
+
+
+def disk_contents(image, names):
+    back = OUT / "disk-readback"
+    shutil.rmtree(back, ignore_errors=True)
+    (back / "S").mkdir(parents=True)
+    got = {}
+    for name in names:
+        try:
+            subprocess.run([sys.executable, "-m", "amitools.tools.xdftool", str(image), "read", name,
+                            str(back / name)], cwd=ROOT, check=True, capture_output=True)
+            got[name] = (back / name).read_bytes()
+        except subprocess.CalledProcessError:
+            return None
+    return got
 
 
 KS13_HUNKS = {0x3E9: "CODE", 0x3EA: "DATA", 0x3EB: "BSS", 0x3EC: "RELOC32",
@@ -72,6 +123,7 @@ def main():
     run(vasm, "-m68000", "-Fhunkexe", "-kick1hunks",
         "-L", OUT / "LinkAgent.lst", "-o", OUT / "LinkAgent", ROOT / "devchain/agent/LinkAgent.s")
     check_ks13_hunks(OUT / "LinkAgent")
+    make_disk(OUT / "LinkAgent")
     if args.workbench:
         original = args.workbench.resolve()
         target = OUT / "LinkAgent-WB13.adf"
@@ -93,15 +145,7 @@ def main():
                 lines[i] = "SYS:System/SetMap usa1 " + comment
         for i, line in enumerate(lines):
             if line.strip().lower().startswith("endcli"):
-                lines[i:i] = ["; Keyboard transfer agent: install a pending update, run it from RAM:",
-                              "If EXISTS C:LinkAgent.new",
-                              "  Copy C:LinkAgent.new C:LinkAgent",
-                              "  Delete C:LinkAgent.new",
-                              "EndIf",
-                              "Copy C:LinkAgent RAM:LinkAgent", "Run >NIL: RAM:LinkAgent",
-                              "; Shell below the agent strip, opened last so it takes keyboard focus",
-                              "Wait 2",
-                              "NewShell CON:0/72/640/184/A500-Shell"]
+                lines[i:i] = amiga_text("S/LinkAgent-startup").decode("latin1").splitlines()
                 break
         else:
             raise RuntimeError("No EndCLI found; inspect this Workbench startup before adding agent")
