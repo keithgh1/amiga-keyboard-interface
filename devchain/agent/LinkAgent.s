@@ -1,3 +1,5 @@
+; SPDX-License-Identifier: MIT
+; Copyright (c) 2026 Keith Monahan
 ; LinkAgent 1.1 - CLI receiver for 68000 / Kickstart 1.3.
 ; DOS calls only in task context. CIA callback buffers framed bytes.
         section code,code

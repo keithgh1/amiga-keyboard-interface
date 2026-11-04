@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Keith Monahan
 """Locates the Workbench 1.3 mouse pointer (red arrow) in a captured frame.
 
 Usage: python tools/pointer.py [image.jpg]   (no argument = fetch a fresh snapshot)

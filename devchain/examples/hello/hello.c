@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: MIT */
+/* Copyright (c) 2026 Keith Monahan */
 /* vbcc +a500 smoke test: C library output plus Exec calls under KS 1.3. */
 #include <stdio.h>
 #include <exec/execbase.h>

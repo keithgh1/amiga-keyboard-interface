@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 Keith Monahan
 // amikbd: Amiga 500 keyboard emulator for ATmega32U4 (Pro Micro, 5 V / 16 MHz).
 // The host sends line commands over USB CDC; the firmware drives the A500 keyboard header (CN13).
 //
@@ -6,6 +8,12 @@
 //
 // Protocol: see PROTOCOL.md. Every command gets exactly one "OK ..." or "ERR ..." line.
 // Asynchronous event lines start with "# ".
+//
+// Written from the Amiga Hardware Reference Manual, Appendix G. No code was taken from other projects;
+// these techniques follow open-source keyboard adapters that do the same job:
+//   open-drain drive and power-up sync ($FD/$FE): Jartza/PS2toAmiga
+//   attention pulse before each byte: jtsiomb/a500kbd, Jartza/PS2toAmiga
+//   reset by /KBRESET and KCLK low together: borb/amigahid-pico, gianlucarenzi/stalker
 
 #include <avr/pgmspace.h>
 #include <util/delay.h>

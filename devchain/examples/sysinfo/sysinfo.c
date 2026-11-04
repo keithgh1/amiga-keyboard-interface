@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: MIT */
+/* Copyright (c) 2026 Keith Monahan */
 /* Reports PAL/NTSC as seen by Exec, graphics.library and the Agnus chip itself. */
 #include <stdio.h>
 #include <exec/execbase.h>

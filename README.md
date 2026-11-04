@@ -119,6 +119,26 @@ python -m unittest discover -s devchain/tests -v
 
 The tests run the assembled LinkAgent code in the Unicorn 68000 emulator with stubbed Exec, DOS and CIA.
 
+## Credits
+
+The firmware was written from the *Amiga Hardware Reference Manual*, Appendix G (keyboard). It contains no
+code from other projects, but several techniques come from these open-source keyboard adapters:
+
+| Project | Licence | What it contributed |
+|---|---|---|
+| [Jartza/PS2toAmiga](https://github.com/Jartza/PS2toAmiga) | LGPL-2.1 | open-drain line drive, power-up sync with $FD/$FE, attention pulse |
+| [jtsiomb/a500kbd](https://github.com/jtsiomb/a500kbd) | GPL-3.0 | bit timing cross-check, attention pulse |
+| [borb/amigahid-pico](https://github.com/borb/amigahid-pico) | EPL-2.0 | reset by holding /KBRESET and KCLK low together |
+| [gianlucarenzi/stalker](https://github.com/gianlucarenzi/stalker) | GPL-3.0 | reset timing cross-check |
+| [jklof/amigakb](https://github.com/jklof/amigakb) | GPL-3.0 | A500 keyboard cable pinout, receive-side reference |
+
+Built and tested with [vbcc, vasm and vlink](http://sun.hasenbraten.de/vbcc/) (Volker Barthelmann and Frank
+Wille), the Amiga NDK 3.2, [Unicorn](https://www.unicorn-engine.org/), [amitools](https://github.com/cnvogelg/amitools),
+pyserial, Pillow and NumPy.
+
+`devchain/config/a500` is adapted from vbcc's `kick13` target config and remains under vbcc's licence;
+it is not covered by the MIT licence below.
+
 ## Licence
 
-MIT. See [LICENSE](LICENSE).
+MIT, except `devchain/config/a500` (see Credits). See [LICENSE](LICENSE).

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Keith Monahan
 """Checksummed PC -> A500 files over amikbd RAWHEX, screen barcode replies.
 
 python tools/amipush.py ping

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Keith Monahan
 """Build with vbcc (+a500), send to the A500 over LinkAgent, run it in the Shell, grab the screen.
 
 python tools/amirun.py devchain/examples/hello/hello.c

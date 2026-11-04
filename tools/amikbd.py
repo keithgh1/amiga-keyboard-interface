@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Keith Monahan
 """Host client for the amikbd firmware.
 
 Usage:

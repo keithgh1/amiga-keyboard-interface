@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Keith Monahan
 """Runs amikbd commands, then logs LED voltages and LED events for a while.
 
 Usage: python tools/ledwatch.py [--secs N] "<cmd>" ["<cmd>" ...]

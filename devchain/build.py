@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Keith Monahan
 """Rebuild LinkAgent and optionally a bootable Gotek ADF from an owned WB 1.3 image."""
 import argparse
 import hashlib

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Keith Monahan
 """Execute the assembled receiver on a 68000, with DOS/Exec/CIA API stubs.
 Run: python -m unittest discover -s devchain/tests -v
 The stubs test our machine code, not Kickstart, video timing or physical wiring.

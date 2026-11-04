@@ -135,7 +135,7 @@ Toolchain, all project-local under `devchain/vendor/` (not in the repository; do
   m68k-kick13 target (startup code, vc.lib, amiga.lib, KS 1.3 prototypes).
 * `NDK3.2/`: Hyperion's free NDK 3.2 R4 (Aminet dev/misc/NDK3.2) for structure
   headers such as `exec/execbase.h`.
-* `vbcc/config/a500`: copy of `devchain/config/a500`, the stock `kick13` config with `NDK3.2/Include_H` added after
+* `vbcc/config/a500`: copy of `devchain/config/a500` (vbcc licence, not MIT), vbcc's stock `kick13` config with `NDK3.2/Include_H` added after
   the kick13 headers, so only 1.3 functions are prototyped. Calling a V36+
   function is therefore a compile error, not a crash on the A500.
 
