@@ -84,10 +84,11 @@ renamed only once their size and CRC32 match. Measured throughput is about 2 KB/
 
 **Getting it onto the Amiga:** [`disk/LinkAgent.adf`](disk/LinkAgent.adf) is a small disk holding only
 LinkAgent and two scripts, so no assembler is needed. Write it to a floppy with any ADF writer, or copy
-it onto a Gotek. Boot your own Workbench 1.3, open a Shell, insert the disk (DF1: works too) and type:
+it onto a Gotek. Boot your own Workbench 1.3 and open a Shell.
 
 ```
-Execute LinkAgent:Start      ; run it now
+Run LinkAgent:LinkAgent      ; one drive: insert the LinkAgent disk when asked, then Workbench again
+Execute LinkAgent:Start      ; second drive or hard disk: run it now
 Execute LinkAgent:Install    ; or copy it to your boot disk
 ```
 

@@ -10,16 +10,23 @@ video capture (`AMIGA_SNAPSHOT_URL`). Keep that window visible during transfers.
 1. Get LinkAgent onto the Amiga, in one of two ways:
    * **LinkAgent disk**: `disk/LinkAgent.adf` at the repository root (`build.py` rebuilds it as
      `devchain/build/LinkAgent.adf`). A non-bootable disk holding only LinkAgent and two scripts,
-     with no Workbench files. Write it to a floppy with any ADF writer, or put it on a Gotek. Boot
-     your own Workbench 1.3, open a Shell, insert the disk (DF1: works too), then either:
+     with no Workbench files. Write it to a floppy with any ADF writer, or put it on a Gotek.
+     Boot your own Workbench 1.3 and open a Shell.
+
+     With one drive, type `Run LinkAgent:LinkAgent` with Workbench still in the drive. Insert the
+     LinkAgent disk when AmigaDOS asks for it; the agent loads into memory and opens its window.
+     Put Workbench back when a later command asks for it. (Tested on an A500 with a Gotek.)
+
+     With a second drive or a hard disk, insert the LinkAgent disk and use the scripts:
 
      ```
      Execute LinkAgent:Start      ; run it now, nothing installed
      Execute LinkAgent:Install    ; copy C:LinkAgent and S:LinkAgent-startup to the boot disk
      ```
 
-     After Install, add `Execute S:LinkAgent-startup` to `S:Startup-Sequence` just before
-     `EndCLI` to start it at every boot.
+     These also work on one drive, but each command they run loads from the Workbench disk, so
+     expect several swaps. After Install, add `Execute S:LinkAgent-startup` to
+     `S:Startup-Sequence` just before `EndCLI` to start it at every boot.
    * **Patched Workbench**: `build/LinkAgent-WB13.adf`, from `build.py --workbench`. A bootable
      copy of your own Workbench 1.3 ADF with the receiver in C: and started from the
      startup-sequence; the original image is left unchanged. Select it on the Gotek and boot.

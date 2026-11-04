@@ -143,11 +143,22 @@ Tips:
 - Don't position the pointer while it shows "zzz".
 - A double-click must land on the icon image, not the label. Take the target from a fresh snapshot.
 
-### Choosing a disk on a Gotek (no hands needed)
-With FlashFloppy and its Amiga-side selector, the screen shows "FlashFloppy Selector" at boot. Drive it
-with keys: `K HELP` (key list), `K UP`/`K DOWN`, `K RETURN` (open folder / close help pages), `K F7`
-(insert the highlighted image in slot 1 and reboot). Snapshot after each move to check the highlight
-before pressing F7.
+### Choosing a disk on a Gotek
+With FlashFloppy and its Amiga-side selector (AUTOBOOT.HFE), the selector runs from slot 0. The Gotek
+remembers its last slot, so a reset normally boots slot 1 again. To reach the selector, press both
+Gotek buttons together (nothing changes on screen), then reset: `python tools/amikbd.py R`.
+
+Drive the selector with keys:
+- `K HELP` (key list), `K UP`/`K DOWN`, `K RETURN` (open a folder, close help pages).
+- `K RETURN` on an image opens the slots browser: move to a slot, then `K RETURN` sets it.
+  The first line of each page jumps to the next page, so move off it before pressing RETURN.
+- `K F9` saves the slots; `K F7` puts the highlighted image in slot 1 and reboots.
+- The selector drops keys sent less than about a second apart. Send them one at a time and snapshot
+  before F7.
+
+While the Amiga runs, one Gotek button steps to the next or previous slot, which the Amiga sees as a
+disk change. With the Workbench disk in slot 1 and `LinkAgent.adf` in slot 2, that is the one-drive
+swap for `Run LinkAgent:LinkAgent`.
 
 ### Keymap
 amikbd types US layout. If punctuation comes out wrong (for example `:` typed as `@`), the disk is

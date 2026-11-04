@@ -1,8 +1,12 @@
 LinkAgent: PC to Amiga file transfer over the keyboard port.
 
-Boot your own Workbench 1.3 disk, open a Shell, insert this disk, then:
+Boot your own Workbench 1.3 and open a Shell, then:
 
-  Execute LinkAgent:Start      run LinkAgent now (nothing installed)
+One drive:
+  Run LinkAgent:LinkAgent      insert this disk when asked,
+                               then put Workbench back
+Second drive or hard disk:
+  Execute LinkAgent:Start      run it now, nothing installed
   Execute LinkAgent:Install    copy it to your boot disk
 
 Keep the LinkAgent window visible during transfers.
