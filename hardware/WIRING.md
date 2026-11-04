@@ -2,7 +2,7 @@
 
 ![Schematic](../docs/img/schematic.png)
 
-A protoboard carrying an Arduino Pro Micro (ATmega32U4, 5 V / 16 MHz) and one 8-pin male header **J1**,
+A protoboard carrying a Pro Micro ATmega32U4 5V 16MHz development board and one 8-pin male header **J1**,
 which takes a cable to the motherboard's keyboard header **CN13**. The real keyboard is unplugged from
 CN13 while the board is connected (no pass-through).
 
@@ -50,7 +50,7 @@ and a Schottky diode (1N5817/BAT85) in its pin 3, cathode toward the keyboard.
 ## Parts
 | Qty | Part |
 |---|---|
-| 1 | Pro Micro 5 V/16 MHz + 2× 1×12 male headers |
+| 1 | Pro Micro ATmega32U4 5V 16MHz (often listed as "Type-C Pro Micro ATmega32U4 5V 16MHz Module Board"; not the 3.3 V / 8 MHz version) + 2× 1×12 male headers |
 | 1 | Solderable breadboard / protoboard |
 | 1 | 1×8 male 0.1" header (J1) |
 | 1 | 8-way female–female 0.1" Dupont cable, ~30 cm (J1 to CN13) |

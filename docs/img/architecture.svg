@@ -90,7 +90,7 @@
   <line class="ln" x1="760" y1="512" x2="642" y2="512" marker-end="url(#ah)"/>
   <text class="lbl" x="701" y="503" text-anchor="middle">HDMI</text>
   <polyline class="ln" points="390,512 160,512 160,406" marker-end="url(#ah)"/>
-  <text class="lbl" x="275" y="503" text-anchor="middle">JPEG snapshot on request</text>
+  <text class="lbl" x="275" y="503" text-anchor="middle">USB video, capture.py</text>
 
   <line class="ln" x1="515" y1="544" x2="515" y2="586" marker-end="url(#ah)"/>
   <text class="lbl" x="525" y="569">HDMI pass-through</text>

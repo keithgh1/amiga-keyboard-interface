@@ -5,7 +5,7 @@ Kickstart and Workbench 1.3.
 
 ```
  PC ──USB──> Pro Micro (amikbd firmware) ──KCLK/KDAT/RESET──> A500 keyboard header CN13
- PC <──JPEG snapshots── HDMI capture <── Amiga video
+ PC <──USB── HDMI capture device (tools/capture.py) <── Amiga video
 ```
 
 Related: [firmware/amikbd/PROTOCOL.md](firmware/amikbd/PROTOCOL.md) (full command reference),
@@ -24,18 +24,20 @@ Related: [firmware/amikbd/PROTOCOL.md](firmware/amikbd/PROTOCOL.md) (full comman
 - Python 3 with `pyserial`, `Pillow` and `numpy`.
 - No COM port setup: the tools find the board by USB ID 2341:8036. The COM number can change when the
   board is re-plugged.
-- A frame source: any HTTP endpoint that returns the current Amiga frame as a JPEG. Set
-  `AMIGA_SNAPSHOT_URL` to it (default `http://localhost:8080/snapshot`).
+- [ffmpeg](https://ffmpeg.org/) on PATH (`winget install Gyan.FFmpeg`), used by `tools/capture.py`.
+- An HDMI capture device that Windows lists as a camera or capture device (tested with an EVGA XR1 Lite).
+  Start `python tools/capture.py --device NAME` and leave it running; `--list` shows the names, and
+  part of a name is enough. Close OBS or any other program using the device first.
 
 ---
 
 ## 3. Reading the screen
 ```bash
-curl -s -o captures/now.jpg "$AMIGA_SNAPSHOT_URL"
+python tools/capture.py --snap captures/now.jpg
 ```
 Then open the JPEG (Claude: `Read captures/now.jpg`). Save frames under `captures/`.
 
-Every tool (amikbd `--snap`, pointer, amipush, amirun) reads the same `AMIGA_SNAPSHOT_URL`.
+Every tool (amikbd `--snap`, pointer, amipush, amirun) gets its frames from the running `capture.py`.
 
 - **"NO SIGNAL" in the frame** means the Amiga is off, or the video chain is down.
 - Coordinates in this guide are for a 1280×720 capture, where the Workbench title bar is at about y=50.
@@ -132,7 +134,7 @@ then goes off.
 
 ## 6. The basic loop (look, act, wait, look)
 ```bash
-curl -s -o captures/now.jpg "$AMIGA_SNAPSHOT_URL"                     # 1. look
+python tools/capture.py --snap captures/now.jpg                      # 1. look
 python tools/pointer.py --goto 650 262                                # 2a. act: mouse
 python tools/amikbd.py "CLICK L 2"
 python tools/amikbd.py 'T dir\n' 'WAITDISK 1500 30000' --snap captures/after.jpg   # 2b. act: keys, wait, look

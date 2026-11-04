@@ -2,8 +2,8 @@
 
 LinkAgent is a CLI program for a 68000 Amiga running Kickstart/Workbench 1.3.
 It receives arbitrary binary files through the existing Pro Micro keyboard cable.
-The PC reads acknowledgements from a barcode in the Amiga window via the existing
-video capture (`AMIGA_SNAPSHOT_URL`). Keep that window visible during transfers.
+The PC reads acknowledgements from a barcode in the Amiga window via the HDMI
+capture device (`tools/capture.py`). Keep that window visible during transfers.
 
 ## First use
 
@@ -134,7 +134,7 @@ The screen decoder expects the normal Workbench blue/white console palette and
 character widths of 4..36 capture pixels. It scans the whole frame, validates
 framing and an XOR check, and requires the same stripe on three scanlines.
 An obscured window or changed palette stops the transfer instead of reporting
-success. Camera URLs can be changed with `--snapshot-url`; COM ports with `--port`.
+success. COM ports can be changed with `--port`.
 
 ## Compile and run C programs (vbcc)
 
