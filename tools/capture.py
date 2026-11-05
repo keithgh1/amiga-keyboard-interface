@@ -77,9 +77,9 @@ class Grabber:
             self.proc.kill()
             self.proc.wait()
             time.sleep(0.2)
-            err = "\n".join(self.errors) or "no frames"
-            print(f"capture: {self.device!r} at {size or 'its default mode'} failed: {err}", flush=True)
-        sys.exit("capture: could not read from the device")
+            if size:
+                print(f"capture: {size} at 30 fps not accepted, using the device's default mode", flush=True)
+        sys.exit(f"capture: could not read from {self.device!r}: " + ("\n".join(self.errors) or "no frames"))
 
     @staticmethod
     def log(proc, errors):

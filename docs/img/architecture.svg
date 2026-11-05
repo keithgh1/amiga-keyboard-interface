@@ -18,21 +18,24 @@
   <!-- PC -->
   <rect class="grp" x="20" y="30" width="280" height="374" fill="#eff6ff" stroke="#3b82f6"/>
   <text class="h" x="160" y="56" text-anchor="middle">Windows 11 PC</text>
-  <rect class="box" x="38" y="72" width="244" height="50" stroke="#3b82f6" fill="#dbeafe"/>
-  <text class="t" x="160" y="93" text-anchor="middle">Claude Code</text>
-  <text class="s" x="160" y="111" text-anchor="middle">reads the screen, decides, acts</text>
-  <rect class="box" x="38" y="136" width="244" height="52" stroke="#3b82f6"/>
-  <text class="t" x="160" y="157" text-anchor="middle">amikbd.py · pointer.py</text>
-  <text class="s" x="160" y="175" text-anchor="middle">keyboard, closed-loop mouse</text>
-  <rect class="box" x="38" y="202" width="244" height="52" stroke="#3b82f6"/>
-  <text class="t" x="160" y="223" text-anchor="middle">amipush.py · amirun.py</text>
-  <text class="s" x="160" y="241" text-anchor="middle">file transfer, build-send-run</text>
-  <rect class="box" x="38" y="268" width="244" height="52" stroke="#3b82f6"/>
-  <text class="t" x="160" y="289" text-anchor="middle">vbcc 0.9h · vasm · NDK 3.2</text>
-  <text class="s" x="160" y="307" text-anchor="middle">cross-compile for Kickstart 1.3</text>
-  <rect class="box" x="38" y="334" width="244" height="52" stroke="#3b82f6"/>
-  <text class="t" x="160" y="355" text-anchor="middle">WinUAE · Unicorn 68000 tests</text>
-  <text class="s" x="160" y="373" text-anchor="middle">preflight on Kickstart 1.3</text>
+  <rect class="box" x="38" y="72" width="244" height="46" stroke="#3b82f6" fill="#dbeafe"/>
+  <text class="t" x="160" y="91" text-anchor="middle">Claude Code</text>
+  <text class="s" x="160" y="108" text-anchor="middle">reads the screen, decides, acts</text>
+  <rect class="box" x="38" y="128" width="244" height="46" stroke="#3b82f6"/>
+  <text class="t" x="160" y="147" text-anchor="middle">amikbd.py · pointer.py</text>
+  <text class="s" x="160" y="164" text-anchor="middle">keyboard, closed-loop mouse</text>
+  <rect class="box" x="38" y="184" width="244" height="46" stroke="#3b82f6"/>
+  <text class="t" x="160" y="203" text-anchor="middle">amipush.py · amirun.py</text>
+  <text class="s" x="160" y="220" text-anchor="middle">file transfer, build-send-run</text>
+  <rect class="box" x="38" y="240" width="244" height="46" stroke="#3b82f6"/>
+  <text class="t" x="160" y="259" text-anchor="middle">vbcc 0.9h · vasm · NDK 3.2</text>
+  <text class="s" x="160" y="276" text-anchor="middle">cross-compile for Kickstart 1.3</text>
+  <rect class="box" x="38" y="296" width="244" height="46" stroke="#3b82f6"/>
+  <text class="t" x="160" y="315" text-anchor="middle">WinUAE · Unicorn 68000 tests</text>
+  <text class="s" x="160" y="332" text-anchor="middle">preflight on Kickstart 1.3</text>
+  <rect class="box" x="38" y="352" width="244" height="46" stroke="#3b82f6"/>
+  <text class="t" x="160" y="371" text-anchor="middle">capture.py</text>
+  <text class="s" x="160" y="388" text-anchor="middle">frames from the capture device</text>
 
   <!-- Pro Micro -->
   <rect class="grp" x="390" y="70" width="180" height="150" fill="#ecfdf5" stroke="#10b981"/>
@@ -90,7 +93,7 @@
   <line class="ln" x1="760" y1="512" x2="642" y2="512" marker-end="url(#ah)"/>
   <text class="lbl" x="701" y="503" text-anchor="middle">HDMI</text>
   <polyline class="ln" points="390,512 160,512 160,406" marker-end="url(#ah)"/>
-  <text class="lbl" x="275" y="503" text-anchor="middle">USB video, capture.py</text>
+  <text class="lbl" x="275" y="503" text-anchor="middle">USB video</text>
 
   <line class="ln" x1="515" y1="544" x2="515" y2="586" marker-end="url(#ah)"/>
   <text class="lbl" x="525" y="569">HDMI pass-through</text>
