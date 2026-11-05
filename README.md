@@ -8,9 +8,18 @@ programs.
 No changes to the Amiga are needed. A small microcontroller board pretends to be the keyboard, and an HDMI
 capture device on the PC lets it see the screen.
 
-Write-up: *Using Claude to Remote Control My Amiga 500* on techtravels.org (link coming soon).
+**Write-up:** [Using Claude to Remote Control My Amiga 500](https://www.techtravels.org/2026/11/using-claude-to-remote-control-my-amiga-500/)
+on techtravels.org covers the hardware, the keyboard emulator, LinkAgent and the development loop.
 
 ![The physical setup](docs/img/setup-pictogram.png)
+
+## Architecture
+
+![Architecture: PC tools including capture.py, Pro Micro to CN13, and Amiga video back through SCART, HDMI and the XR1 Lite capture](docs/img/architecture.png)
+
+Keys, mouse and files go in through the Pro Micro on the keyboard header. The screen comes back through
+the HDMI capture device and `tools/capture.py`, and it is both what Claude sees and LinkAgent's
+acknowledgement channel.
 
 ## What's here
 
@@ -23,8 +32,6 @@ Write-up: *Using Claude to Remote Control My Amiga 500* on techtravels.org (link
 | [`hardware/WIRING.md`](hardware/WIRING.md) | Board wiring, pinout and parts |
 | [`USAGE.md`](USAGE.md) | Operator guide: reading the screen, sending input, waiting for the disk, troubleshooting |
 | [`CLAUDE.md`](CLAUDE.md) | Quick reference that Claude Code reads when working in this repository |
-
-![Architecture](docs/img/architecture.png)
 
 ## Hardware
 
